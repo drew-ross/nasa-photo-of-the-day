@@ -1,11 +1,9 @@
 import React from 'react';
 
-const Image = (props) => {
-    
-    const {title, date, hdurl, explanation} = props;
+const Image = ({hdurl}) => {
     
     return (
-        
+        <img className='image' src={hdurl}></img>
     )
 }
 

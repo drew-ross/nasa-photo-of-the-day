@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import Image from './Image';
+import ImageHeader from './ImageHeader';
+import ImageExplanation from './ImageExplanation';
 
 const ImageContainer = (props) => {
     const { title, date, hdurl, explanation } = props.nasaData;
     return (
         <div className='container'>
-            <h2>{title}</h2>
-            <h3>{date}</h3>
-            <img src={hdurl} alt='NASA of the day'></img>
-            <p>{explanation}</p>
+            <ImageHeader title={title} date={date} />
+            <Image hdurl={hdurl} />
+            <ImageExplanation explanation={explanation} />
         </div>
     )
 }
