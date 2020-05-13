@@ -32,7 +32,7 @@ function App() {
       })
       console.log(dateStringArr[2])
       dateString += ('-' + dateStringArr[2]);
-      setFormattedDate(dateString);
+      return dateString;
     })
   }
 
