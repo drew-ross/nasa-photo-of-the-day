@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Image = ({hdurl}) => {
+const Image = ({url}) => {
     
+    useEffect(() => {
+        console.log('image changed');
+    }, [url]);
+
     return (
-        <img className='image' src={hdurl}></img>
+        <img className='image' src={url}></img>
     )
 }
 
