@@ -6,6 +6,7 @@ import ImageContainer from './components/ImageContainer'
 import Header from './components/Header'
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import StyledDiv from './components/StyledDiv';
 
 function App() {
 
@@ -20,10 +21,10 @@ function App() {
       let dateStringArr = startDateString.split(' ');
       let extraZero = '-'
       const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      
+
       dateString += dateStringArr[3]
       months.forEach((month, index) => {
-        if(startDateString.includes(month)) {
+        if (startDateString.includes(month)) {
           if (index + 1 < 10) {
             extraZero = '-0';
           }
@@ -39,21 +40,24 @@ function App() {
   useEffect(dateFormatter, [startDate])
 
   useEffect(() => {
-    if(formattedDate !== null) {
+    if (formattedDate !== null) {
       axios.get(`${BASE_URL}apod?api_key=${API_KEY}&date=${formattedDate}`)
-      .then(response => setNasaData(response.data))
+        .then(response => setNasaData(response.data))
     }
   }, [formattedDate]);
 
   return (
-    <div className="App">
-      <Header />
-      <div className='datePicker'>
-        <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-      </div>
-      {
-        nasaData && <ImageContainer nasaData={nasaData} />
-      }
+    <div className='App'>
+      <StyledDiv>
+        <Header />
+        <div className='datePicker'>
+          <span>Pick a date: </span>
+          <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+        </div>
+        {
+          nasaData && <ImageContainer nasaData={nasaData} />
+        }
+      </StyledDiv>
     </div>
   );
 }

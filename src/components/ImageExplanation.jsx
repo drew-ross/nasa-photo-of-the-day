@@ -1,11 +1,14 @@
 import React from 'react';
+import StyledDiv from './StyledDiv';
 
 const ImageExplanation = ({ explanation }) => {
 
     return (
-        <section className="imageExplanation">
-            <p>{explanation}</p>
-        </section>
+        <StyledDiv content>
+            <section className="imageExplanation">
+                <p>{explanation}</p>
+            </section>
+        </StyledDiv>
     )
 }
 

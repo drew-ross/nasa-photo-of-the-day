@@ -7,8 +7,8 @@ const ImageContainer = (props) => {
     const { title, date, url, explanation } = props.nasaData;
     return (
         <div className='container'>
-            <ImageHeader title={title} date={date} />
             <Image url={url} />
+            <ImageHeader title={title} date={date} />
             <ImageExplanation explanation={explanation} />
         </div>
     )
