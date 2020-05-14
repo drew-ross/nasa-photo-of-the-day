@@ -48,16 +48,18 @@ function App() {
 
   return (
     <div className='App'>
-      <StyledDiv>
-        <Header />
-        <div className='datePicker'>
-          <span>Pick a date: </span>
-          <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-        </div>
-        {
-          nasaData && <ImageContainer nasaData={nasaData} />
-        }
-      </StyledDiv>
+      <div className='App-container'>
+        <StyledDiv>
+          <Header />
+          <div className='datePicker'>
+            <span>Pick a date: </span>
+            <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+          </div>
+          {
+            nasaData && <ImageContainer nasaData={nasaData} />
+          }
+        </StyledDiv>
+      </div>
     </div>
   );
 }

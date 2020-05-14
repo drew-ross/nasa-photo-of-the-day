@@ -1,4 +1,10 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
+
+const StyledImg = styled.img`
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0;
+`;
 
 const Image = ({url}) => {
     
@@ -7,7 +13,7 @@ const Image = ({url}) => {
     }, [url]);
 
     return (
-        <img className='image' src={url}></img>
+        <StyledImg className='image' src={url}></StyledImg>
     )
 }
 

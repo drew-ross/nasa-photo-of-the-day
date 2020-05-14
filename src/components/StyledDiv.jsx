@@ -5,9 +5,10 @@ const StyledDiv = styled.div`
     border-radius: 5px;
     margin: 1rem auto;
     padding: 1rem;
-    width: 80%;
+    max-width: 80%;
     box-shadow: 0 0 5px 0 #343538;
-    ${props => props.content ? `background: #343538; color: white;` : null}
+    ${props => props.content ? `background: #343538; color: white;` : `background: white`}
+    ${props => props.short ? `width: 50%` : null}
 `;
 
 export default StyledDiv;
